@@ -3,16 +3,17 @@ import React from 'react';
 import './App.css';
 import Button from './components/ui/Button/Button';
 
+
 function App() {
   return (
     <div className="App">
       demat breizh
       {/* <Button  text="Texte du boutton" /> */}
-      <Button>
+      <Button">
         <>
-          <div>Text du boutton</div>
+          <div>Text du bouton</div>
           <div>Du</div>
-          <div>Boutton</div>
+          <div>Bouton</div>
         
         </>
       </Button>
