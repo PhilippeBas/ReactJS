@@ -1,12 +1,17 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect, Component} from 'react'
 import './App.css';
 import Button from './components/ui/Button/Button';
 
 
 
 
-function App() {
+function App(props) {
   const [counter, setcounter] = useState(0)
+  useEffect(() => {
+    console.log('valeur étatique : '+ counter);
+    // return () => {
+    // };
+  }, [props,counter])
   return (
     <div className="App">
       demat breizh
