@@ -1,9 +1,12 @@
-import React from 'react'
+import React,{useState} from 'react'
+import './App.css';
 import Button from './components/ui/Button/Button';
 
 
 
+
 function App() {
+  const [counter, setcounter] = useState(0)
   return (
     <div className="App">
       demat breizh
@@ -12,7 +15,12 @@ function App() {
         bgColor="tomato" 
         type= 'submit'
         title= '+1'
-        onButtonClick={(unTruc)=>{ console.log(unTruc); }}
+        onButtonClick={(unTruc)=>{ console.log(unTruc)
+          
+          setcounter(counter+1);
+          console.log(counter);
+
+        ; }}
        
       >
         <>
@@ -23,7 +31,11 @@ function App() {
       <Button
         type='submit'
         title= '-1'
-        onButtonClick={(unTruc)=>{ console.log(unTruc); }}
+        onButtonClick={(unTruc)=>{ console.log(unTruc)
+        
+          setcounter(counter-1);
+          console.log(counter);
+        ; }}
       >
         -1
       </Button>
