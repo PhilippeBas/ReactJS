@@ -7,7 +7,15 @@ function App() {
   return (
     <div className="App">
       demat breizh
-      <Button></Button>
+      {/* <Button  text="Texte du boutton" /> */}
+      <Button>
+        <>
+          <div>Text du boutton</div>
+          <div>Du</div>
+          <div>Boutton</div>
+        
+        </>
+      </Button>
     </div>
   );
 }
