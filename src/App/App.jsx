@@ -9,11 +9,13 @@ function App() {
     <div className="App">
       demat breizh
       {/* <Button  text="Texte du boutton" /> */}
-      <Button">
+      <Button onButtonClick={(unTruc)=>{
+          console.log(unTruc);
+      }}>
         <>
-          <div>Text du bouton</div>
+          <div>Text du boutton</div>
           <div>Du</div>
-          <div>Bouton</div>
+          <div>Boutton</div>
         
         </>
       </Button>

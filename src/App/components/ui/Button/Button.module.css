@@ -1,8 +1,8 @@
 .Button{
-    background-color: rgb(164, 221, 32);
+    background-color: rgb(203, 177, 228);
     color:rgb(9, 12, 12);
     font-weight: 900;
     font-size: xx-large;
     border: none;
-    border-radius: 25px;
+    border-radius: 5px;
 }
