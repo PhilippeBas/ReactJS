@@ -1,24 +1,32 @@
 import React from 'react'
-// import './Button.css'
 import style from './Button.module.css'
 import PropTypes from 'prop-types'
 
-const Button = (props) => {
+interface I_ButtonProps{
+    onButtonClick: Function
+    style?: object
+    bgColor?: string
+    children: string|React.ReactNode|Array<React.ReactNode|string>
+    type?: 'button'|'reset'|'submit'
+}
 
-    console.log(props);
-    return <button onClick={(evt)=>{
+const Button:React.FC<I_ButtonProps> = (props) => {
+        return <button onClick={(evt)=>{
         props.onButtonClick('Hello phil');
     }} className={style.Button}
-    //    style={ {backgroundColor:props.bgColor} }
        style={{ ...props.style,backgroundColor:props.bgColor} }
     >{props.children}</button>
-    // return <button>Benjamin</button> ;
 }
 Button.propTypes={
     children: PropTypes.any.isRequired,
     onButtonClick: PropTypes.func.isRequired,
     bgColor: PropTypes.string,
-    style: PropTypes.object
+    style: PropTypes.object,
+    type: PropTypes.oneOf(['button','reset','submit'])
+}
+Button.defaultProps={
+    bgColor: 'lime'
+
 }
 
 

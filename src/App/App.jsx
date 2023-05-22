@@ -1,7 +1,6 @@
-import React from 'react';
-// import logo from './logo.svg';
-import './App.css';
+import React from 'react'
 import Button from './components/ui/Button/Button';
+
 
 
 function App() {
@@ -9,15 +8,24 @@ function App() {
     <div className="App">
       demat breizh
       {/* <Button  text="Texte du boutton" /> */}
-      <Button bgColor="tomato" onButtonClick={(unTruc)=>{
-          console.log(unTruc);
-      }}>
+      <Button 
+        bgColor="tomato" 
+        type= 'submit'
+        title= '+1'
+        onButtonClick={(unTruc)=>{ console.log(unTruc); }}
+       
+      >
         <>
-          <div>Text du bouton</div>
-          <div>Du</div>
-          <div>Bouton</div>
+          +1
         
         </>
+      </Button >
+      <Button
+        type='submit'
+        title= '-1'
+        onButtonClick={(unTruc)=>{ console.log(unTruc); }}
+      >
+        -1
       </Button>
     </div>
   );
