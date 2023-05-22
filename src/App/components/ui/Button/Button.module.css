@@ -6,3 +6,11 @@
     border: none;
     border-radius: 5px;
 }
+
+.Button:hover{
+    box-shadow: 15px 15px 20px grey;
+}
+.clicked{
+    box-shadow: 5px 5px 20px rgb(17, 189, 123) !important; 
+    border:1px solid purple
+}
