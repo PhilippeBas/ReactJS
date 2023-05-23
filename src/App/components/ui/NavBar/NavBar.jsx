@@ -1,8 +1,9 @@
-import React,{useEffect,useState} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './NavBar.module.css';
+import { Container,Navbar,Nav } from 'react-bootstrap';
 
-const initialState={};
+
 
 /**
  * temlateName component
@@ -10,20 +11,22 @@ const initialState={};
  * @returns React.component NavBar render
  */
 const NavBar = (props) => {
-    const [state, setstate] = useState(initialState);
-    useEffect(() => {
-      console.log('navBar Mounted');
-    }, [])
-  
-return (
-  <div className={styles.NavBar} data-testid="NavBar">
-  NavBar Component
-  </div>
-)
+
+  return (
+    <div className={styles.NavBar} data-testid="NavBar">
+        <Navbar bg="dark" variant="dark" >
+          <Container fluid>
+            <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+            <Nav className="me-auto">
+              <Nav.Link href="#home">Home</Nav.Link>
+              <Nav.Link href="#features">Features</Nav.Link>
+              <Nav.Link href="#pricing">Pricing</Nav.Link>
+            </Nav>
+          </Container>
+        </Navbar>
+    </div>
+  )
 };
 
-NavBar.propTypes = {};
-
-NavBar.defaultProps = {};
 
 export default NavBar;

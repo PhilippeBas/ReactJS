@@ -1,50 +1,32 @@
-import React,{useState, useEffect, Component} from 'react'
+import React from 'react'
 import './App.css';
-import Button from './components/ui/Button/Button';
+
+import FlexW1Grow from './components/layout/FlexW1Grow/FlexW1Grow';
+import Header from './components/ui/Header/Header';
+import Footer from './components/ui/Footer/Footer';
+import {MemeSVGViewer ,emptyMeme} from 'orsys-tjs-meme'
+import MemeForm from './components/functionnal/MemeForm/MemeForm';
+import FlexH3Grow from './components/layout/FlexH3Grow/FlexH3Grow';
+import NavBar from './components/ui/NavBar/NavBar';
+
 
 
 
 
 function App(props) {
-  const [counter, setcounter] = useState(0)
-  useEffect(() => {
-    console.log('valeur étatique : '+ counter);
-    // return () => {
-    // };
-  }, [props,counter])
+  
   return (
-    <div className="App">
-      demat breizh
-      {/* <Button  text="Texte du boutton" /> */}
-      <Button 
-        bgColor="tomato" 
-        type= 'submit'
-        title= '+1'
-        onButtonClick={(unTruc)=>{ console.log(unTruc)
-          
-          setcounter(counter+1);
-          console.log(counter);
 
-        ; }}
-       
-      >
-        <>
-          +1
-        
-        </>
-      </Button >
-      <Button
-        type='submit'
-        title= '-1'
-        onButtonClick={(unTruc)=>{ console.log(unTruc)
-        
-          setcounter(counter-1);
-          console.log(counter);
-        ; }}
-      >
-        -1
-      </Button>
-    </div>
+  <FlexH3Grow>
+    <Header />
+    <NavBar />
+    <FlexW1Grow>
+        <MemeSVGViewer meme={emptyMeme} image={undefined}/>
+        <MemeForm/>
+    </FlexW1Grow>
+    <Footer/>
+  </FlexH3Grow>
+
   );
 }
 

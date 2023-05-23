@@ -11,7 +11,7 @@ const FlexW1Grow = (props) => {
      
 return (
   <div className={styles.FlexW1Grow} data-testid="FlexW1Grow">
-    (props.children)
+    {props.children}
   </div>
 )
 };

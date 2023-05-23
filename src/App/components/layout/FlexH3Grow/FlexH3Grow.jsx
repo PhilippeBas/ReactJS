@@ -11,7 +11,7 @@ const FlexH3Grow = (props) => {
      
 return (
   <div className={styles.FlexH3Grow} data-testid="FlexH3Grow">
-    (props.children)
+    {props.children}
   </div>
 )
 };

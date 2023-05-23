@@ -1,29 +1,12 @@
-import React,{useEffect,useState} from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import styles from './Header.module.css';
 
-const initialState={};
-
-/**
- * temlateName component
- * @param {any} props
- * @returns React.component Header render
- */
-const Header = (props) => {
-    const [state, setstate] = useState(initialState);
-    useEffect(() => {
-      console.log('header Mounted');
-    }, [])
-  
-return (
-  <div className={styles.Header} data-testid="Header">
-  Header Component
-  </div>
-)
+const Header = () =>{
+  return (
+    <div className={styles.Header} data-testid="Header">
+      <span className={styles.meme}>Geronimo8080.</span> 
+      <span className={styles.js}>js</span> 
+    </div>
+  )
 };
-
-Header.propTypes = {};
-
-Header.defaultProps = {};
-
 export default Header;

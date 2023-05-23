@@ -11,7 +11,7 @@ const TemplateName = (props) => {
      
 return (
   <div className={styles.TemplateName} data-testid="TemplateName">
-    (props.children)
+    {props.children}
   </div>
 )
 };
