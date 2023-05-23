@@ -3,7 +3,7 @@ import style from './Button.module.css'
 import PropTypes from 'prop-types'
 
 interface I_ButtonProps{
-    onButtonClick: Function
+    onButtonClick?: Function
     style?: object
     bgColor?: string
     children: string|React.ReactNode|Array<React.ReactNode|string>
@@ -20,15 +20,16 @@ const Button:React.FC<I_ButtonProps> = (props) => {
             )};
         }, [isClicked])
     return <button onClick={(evt)=>{
-        props.onButtonClick('Hello phil');
-        setisclicked(true);  
+     
+        setisclicked(true);
+        if(undefined!==props.onButtonClick){props.onButtonClick()} 
     }} className={!isClicked?style.Button:style.Button+' '+style.clicked}
        style={{ ...props.style,backgroundColor:props.bgColor} }
     >{props.children}</button>
 }
 Button.propTypes={
     children: PropTypes.any.isRequired,
-    onButtonClick: PropTypes.func.isRequired,
+    onButtonClick: PropTypes.func,
     bgColor: PropTypes.string,
     style: PropTypes.object,
     type: PropTypes.oneOf(['button','reset','submit'])
