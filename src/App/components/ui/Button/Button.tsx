@@ -21,7 +21,7 @@ const Button:React.FC<I_ButtonProps> = (props) => {
         }, [isClicked])
     return <button onClick={(evt)=>{
         props.onButtonClick('Hello phil');
-        setisclicked(true);
+        setisclicked(true);  
     }} className={!isClicked?style.Button:style.Button+' '+style.clicked}
        style={{ ...props.style,backgroundColor:props.bgColor} }
     >{props.children}</button>
