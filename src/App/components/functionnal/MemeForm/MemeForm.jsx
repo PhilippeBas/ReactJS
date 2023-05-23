@@ -13,6 +13,7 @@ const initialState = {};
 const MemeForm = (props) => {
   return (
     <div className={styles.MemeForm} data-testid="MemeForm">
+      
       <form>
         <label htmlFor="titre"><h1>Titre</h1></label>
         <br />
@@ -24,6 +25,10 @@ const MemeForm = (props) => {
         <br />
         <select name="image" id="image">
           <option value="-1">No image</option>
+          {
+            props.images.map((img,i)=><option key={'select-img-${i}'} value={img.id}>{img.titre}</option>)
+
+          }
         </select>
         <hr />
         <label htmlFor="text"><h2>texte</h2></label>
