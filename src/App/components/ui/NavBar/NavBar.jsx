@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './NavBar.module.css';
 import { Container,Navbar,Nav } from 'react-bootstrap';
+import {LinkContainer} from 'react-router-bootstrap';
 
 
 
@@ -16,11 +17,17 @@ const NavBar = (props) => {
     <div className={styles.NavBar} data-testid="NavBar">
         <Navbar bg="dark" variant="dark" >
           <Container fluid>
-            <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+            <LinkContainer to="/"><Navbar.Brand href="#">Navbar</Navbar.Brand></LinkContainer>
             <Nav className="me-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#features">Features</Nav.Link>
-              <Nav.Link href="#pricing">Pricing</Nav.Link>
+              <LinkContainer to="/thumbnail">
+                <Nav.Link href="#">thumbnail</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/Meme">
+                <Nav.Link href="#">Meme</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/Meme/1">
+                <Nav.Link href="#">Meme1</Nav.Link>
+              </LinkContainer>
             </Nav>
           </Container>
         </Navbar>

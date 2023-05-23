@@ -10,6 +10,7 @@ import styles from './FlexW1Grow.module.css';
 const FlexW1Grow = (props) => {
      
 return (
+  
   <div className={styles.FlexW1Grow} data-testid="FlexW1Grow">
     {props.children}
   </div>
@@ -17,7 +18,7 @@ return (
 };
 
 FlexW1Grow.propTypes = {
-  children: PropTypes.array.isRequired
+  children: PropTypes.any.isRequired
 };
 
 FlexW1Grow.defaultProps = {};

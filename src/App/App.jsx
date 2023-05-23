@@ -8,6 +8,7 @@ import { MemeSVGViewer, emptyMeme, MemeSVGThumbnail } from 'orsys-tjs-meme';
 import MemeForm from './components/functionnal/MemeForm/MemeForm';
 import FlexH3Grow from './components/layout/FlexH3Grow/FlexH3Grow';
 import NavBar from './components/ui/NavBar/NavBar';
+import { Route, Routes } from 'react-router-dom';
 
 
 function App(props) {
@@ -35,14 +36,24 @@ function App(props) {
       <NavBar />
       {/* {JSON.stringify(meme)} */}
 
-      <MemeSVGThumbnail memes={memes} images={imgs} basePath=''/>
+      
+      <FlexW1Grow>
+        <Routes>
+          <Route path='/thumbnail' element={<MemeSVGThumbnail memes={memes} images={imgs} basePath='' />}/>
+          <Route path='/meme' element={
+          <>
+            <MemeSVGViewer meme={meme} image={imgs.find((img, pos) => img.id === meme.imageId)} basePath='' />
+            <MemeForm meme={meme} images={imgs} onMemeChange={(meme) => {
+              setmeme(meme)
+            }} />
+          </>}
+          />
+          <Route path='/' element={'Home welcom'}/>
+        </Routes>
 
-      {/* <FlexW1Grow>
-        <MemeSVGViewer meme={meme} image={imgs.find((img, pos) => img.id === meme.imageId)} basePath='' />
-        <MemeForm meme={meme} images={imgs} onMemeChange={(meme) => {
-          setmeme(meme)
-        }} />
-      </FlexW1Grow> */}
+
+       
+      </FlexW1Grow> 
       <Footer />
     </FlexH3Grow>
 
