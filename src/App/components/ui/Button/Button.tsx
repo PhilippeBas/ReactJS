@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import style from './Button.module.css'
 import PropTypes from 'prop-types'
 
@@ -13,13 +13,15 @@ interface I_ButtonProps{
 
 const Button:React.FC<I_ButtonProps> = (props) => {
     const [isClicked, setisclicked] = useState(false);
-        useEffect(() => {
+    useEffect(() => {
+        console.log('toto');
           if(isClicked){
-            setTimeout(()=> setisclicked(false), 1000
-          };
-        }, [isclicked])
-        return <button onClick={(evt)=>{
+                setTimeout(()=> setisclicked(false), 1000
+            )};
+        }, [isClicked])
+    return <button onClick={(evt)=>{
         props.onButtonClick('Hello phil');
+        setisclicked(true);
     }} className={!isClicked?style.Button:style.Button+' '+style.clicked}
        style={{ ...props.style,backgroundColor:props.bgColor} }
     >{props.children}</button>
