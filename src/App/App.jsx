@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css';
 
 import FlexW1Grow from './components/layout/FlexW1Grow/FlexW1Grow';
@@ -12,7 +12,12 @@ import NavBar from './components/ui/NavBar/NavBar';
 
 function App(props) {
   const [meme, setmeme] = useState(emptyMeme);
-  const [imgs, setimgs] = useState([])
+  const [imgs, setimgs] = useState([]);
+  useEffect(() => {
+    fetch('http://localhost:5679/images')
+      .then(r => r.json())
+      .then(arr => setimgs(arr));
+  }, [])
   return (
 
     <FlexH3Grow>
@@ -20,7 +25,7 @@ function App(props) {
       <NavBar />
       {JSON.stringify(meme)}
       <FlexW1Grow>
-        <MemeSVGViewer meme={meme} image={imgs.find((img, pos) => imgs.at.id === meme.imageId)} basePath='' />
+        <MemeSVGViewer meme={meme} image={imgs.find((img, pos) => img.id === meme.imageId)} basePath='' />
         <MemeForm meme={meme} images={imgs} onMemeChange={(meme) => {
           setmeme(meme)
         }} />
