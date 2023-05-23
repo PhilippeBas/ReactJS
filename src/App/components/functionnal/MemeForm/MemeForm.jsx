@@ -30,7 +30,7 @@ const MemeForm = (props) => {
         >
           <option value="-1">No image</option>
           {
-            props.images.map((img,i)=><option key={'select-img-${i}'} value={img.id}>{img.titre}</option>)
+            props.images.map((img,i)=><option key={`select-img-${i}`} value={img.id}>{img.titre}</option>)
 
           }
         </select>
