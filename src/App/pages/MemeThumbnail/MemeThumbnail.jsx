@@ -1,19 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { MemeSVGViewer, emptyMeme, MemeSVGThumbnail } from 'orsys-tjs-meme';
-import MemeForm from './components/functionnal/MemeForm/MemeForm';
+import {connect,useSelector,useDispatch} from 'react-redux'
 
-function MemeThumbnail(props) {
+function MemeThumbnail() {
+  const memes=useSelector(s=>s.listes.memes)
+  const images=useSelector(s=>s.listes.images)
   return (
-    <>
-        <MemeSVGViewer meme={meme} image={imgs.find((img, pos) => img.id === meme.imageId)} basePath='' />
-        <MemeForm meme={meme} images={imgs} onMemeChange={(meme) => {
-        setmeme(meme)
-        }} />
-    </>
+    <MemeSVGThumbnail memes={memes} images={images} basePath=''/>
   )
 }
-
-MemeThumbnail.propTypes = {}
-
 export default MemeThumbnail
+
