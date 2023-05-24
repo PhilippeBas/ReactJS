@@ -17,15 +17,23 @@ const memes = createSlice({
     }
   },
   extraReducers:(builder)=>{
+    builder.addCase('current/save',(state, action)=>{
+      const pos = state.memes.findIndex(meme => meme.id === action.payload.id)
+      if(pos>=0){
+        state.memes[pos] = action.payload;
+      }else{
+        state.memes.push(action.payload);
+      }
+    })
+
     builder.addCase(fetchAllListesValues.fulfilled,(state,action)=>{
+      
             console.log(state,action);   
             state.images.push(...action.payload.images);
             state.memes.push(...action.payload.memes);
  
     })
-    builder.addDefaultCase((state,action)=>{
-        console.log(state,action)
-    })
+    builder.addDefaultCase((state,action)=>{ console.log(state,action) })
   }
 });
 

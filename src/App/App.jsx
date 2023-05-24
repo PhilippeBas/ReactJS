@@ -18,7 +18,6 @@ function App(props) {
 
     <FlexH3Grow>
       <Header />
-      <Button></Button>
       <NavBar />
       {/* {JSON.stringify(meme)} */}
 
