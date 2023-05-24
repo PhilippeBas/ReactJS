@@ -10,7 +10,7 @@ import FlexH3Grow from './components/layout/FlexH3Grow/FlexH3Grow';
 import NavBar from './components/ui/NavBar/NavBar';
 import { Route, Routes } from 'react-router-dom';
 import Button from './components/ui/Button/Button';
-
+import {store} from './store/store';
 
 function App(props) {
   const [meme, setmeme] = useState(emptyMeme);
