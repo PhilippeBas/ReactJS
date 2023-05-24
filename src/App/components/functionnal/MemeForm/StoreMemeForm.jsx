@@ -14,4 +14,4 @@ export default function StoreMemeForm() {
   return (
    <MemeForm images={imagesFromeStore} meme={memeFromeStore} onMemeChange={onMemeChange}/>
   )
-}
+} 
