@@ -9,6 +9,7 @@ import MemeForm from './components/functionnal/MemeForm/MemeForm';
 import FlexH3Grow from './components/layout/FlexH3Grow/FlexH3Grow';
 import NavBar from './components/ui/NavBar/NavBar';
 import { Route, Routes } from 'react-router-dom';
+import Button from './components/ui/Button/Button';
 
 
 function App(props) {
@@ -33,6 +34,7 @@ function App(props) {
 
     <FlexH3Grow>
       <Header />
+      <Button></Button>
       <NavBar />
       {/* {JSON.stringify(meme)} */}
 
